@@ -23,7 +23,7 @@ class ProductType extends AbstractType
                 'constraints' => [
                     new Assert\File(
                         maxSize: '1024k',
-                        extensions: ['jpg', 'jpeg', 'png'],
+                        extensions: ['jpg', 'jpeg', 'png', 'avif'],
                         extensionsMessage: 'Please upload a valid Image document',
                     )
                 ]
