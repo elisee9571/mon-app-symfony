@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class CategoryRepositoryTest extends KernelTestCase
 {
-    public function testFindAllCategory(): void
+    public function testFindAll(): void
     {
         self::bootKernel();
         $container = self::getContainer();
@@ -16,7 +16,7 @@ class CategoryRepositoryTest extends KernelTestCase
         $this->assertEquals(6, count($categories));
     }
 
-    public function testFindOneByTitleCategory(): void
+    public function testFindOneByTitle(): void
     {
         self::bootKernel();
         $container = self::getContainer();
