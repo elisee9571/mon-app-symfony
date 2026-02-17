@@ -12,8 +12,8 @@ class CategoryRepositoryTest extends KernelTestCase
         self::bootKernel();
         $container = self::getContainer();
 
-        $categories = count($container->get(CategoryRepository::class)->findAll());
-        $this->assertEquals(6, $categories);
+        $categories = $container->get(CategoryRepository::class)->findAll();
+        $this->assertEquals(6, count($categories));
     }
 
     public function testFindOneByTitleCategory(): void
