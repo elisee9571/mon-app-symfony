@@ -17,7 +17,6 @@ class CategoryFixtures extends Fixture
             $category->setTitle($value);
 
             $manager->persist($category);
-
             $this->addReference('category-' . $key, $category);
         }
 
