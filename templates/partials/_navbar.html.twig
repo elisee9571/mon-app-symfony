@@ -12,12 +12,16 @@
                     <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Home</a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ path('app_product_catalog') }}">Catalogue</a>
+                </li>
+
                 {% if app.user %}
                     {% set role = app.user.roles|find(role => role == 'ROLE_ADMIN') %}
 
                     {% if role %}
                         <li class="nav-item">
-                            <a class="btn btn-danger" href="{{ path('app_admin_dashboard') }}">Espace admin</a>
+                            <a class="btn btn-danger ms-2" href="{{ path('app_admin_dashboard') }}">Espace admin</a>
                         </li>
                     {% endif %}
                 {% endif %}
