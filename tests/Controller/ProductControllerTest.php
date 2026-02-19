@@ -21,7 +21,7 @@ class ProductControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
     }
 
-    public function testCreateProduct(): void
+    public function testNewProduct(): void
     {
         $client = self::createClient();
         $user = new InMemoryUser('admin', 'password', ['ROLE_ADMIN']);
@@ -65,5 +65,17 @@ class ProductControllerTest extends WebTestCase
         $client->submit($form);
 
         $this->assertResponseRedirects('/admin/product');
+    }
+
+    public function testShowProduct(): void
+    {
+        $client = self::createClient();
+
+        $user = new InMemoryUser('admin', 'password', ['ROLE_ADMIN']);
+        $client->loginUser($user);
+
+        $client->request('GET', '/admin/product/' . self::$id);
+
+        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
     }
 }
