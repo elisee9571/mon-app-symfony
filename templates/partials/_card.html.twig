@@ -3,8 +3,8 @@
         src="{{ (product.imageFilename) ? asset('uploads/products/' ~ product.imageFilename) : asset('images/product/default-product.jpg') }}"
         alt="{{ product.title }}" class="card-img-top" height="200" loading="lazy" style="object-fit: cover">
     <div class="card-body">
-        <h5 class="card-title">{{ product.title }}</h5>
-        <p class="card-text">{{ product.description }}</p>
+        <h5 class="card-title">{{ product.title|capitalize }}</h5>
+        <p class="card-text">{{ product.description|u.truncate(100, '...') }}</p>
         <p class="card-text">{{ product.price }}€</p>
         <a href="{{ path('app_public_product_show', {'id' : product.id}) }}" class="btn btn-primary">Voir plus</a>
     </div>

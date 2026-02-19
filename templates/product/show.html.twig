@@ -8,7 +8,7 @@
     <div class="row align-items-start flex-column flex-lg-row">
 
         <div class="d-block d-lg-none">
-            <h1>{{ product.title }}</h1>
+            <h1>{{ product.title|capitalize }}</h1>
             <p class="text-muted">{{ product.category.title }}</p>
             <p>{{ product.price }} €</p>
         </div>
@@ -19,7 +19,7 @@
 
         <div class="col">
             <div class="d-none d-lg-block">
-                <h1>{{ product.title }}</h1>
+                <h1>{{ product.title|capitalize }}</h1>
                 <p class="text-muted">{{ product.category.title }}</p>
                 <p>{{ product.price }} €</p>
             </div>
